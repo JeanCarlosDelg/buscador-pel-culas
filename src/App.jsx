@@ -35,8 +35,8 @@ function App() {
 
   const handleChange = (e) => {
     // controlado por react
-    // if (newQuery.startsWith(' ')) return
-    const newSearch = e.target.value.trim()
+    const newSearch = e.target.value
+    if (newSearch.startsWith(' ')) return
     updateSearch(newSearch)
     debouncedGetMovie(newSearch)
     setError(null)
